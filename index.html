@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="dark">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +16,13 @@
                 <span class="logo-symbol">&gt;_</span> TRALIRAN
             </a>
             <nav class="nav-links">
-                <a href="#ecosystem" data-i18n="nav_ecosystem">Экосистема</a>
-                <a href="#about" data-i18n="nav_about">Обо мне</a>
-                <a href="#news" data-i18n="nav_news">Новости</a>
+                <a href="#ecosystem" data-i18n="nav_ecosystem">Ecosystem</a>
+                <a href="#about" data-i18n="nav_about">About</a>
+                <a href="#news" data-i18n="nav_news">News</a>
                 <a href="https://dev.to/traliran" target="_blank" class="ext-link">Dev.to ↗</a>
             </nav>
             <div class="nav-controls">
-                <button id="lang-toggle" class="btn-pill">RU</button>
+                <button id="lang-toggle" class="btn-pill">EN</button>
                 <button id="theme-toggle" class="btn-pill">🌙</button>
             </div>
         </div>
@@ -33,10 +33,10 @@
         <section class="hero fade-in">
             <div class="container">
                 <div class="hero-badge" data-i18n="hero_badge">✨ Minimalist Unix & AI Ecosystem</div>
-                <h1 class="hero-title" data-i18n="hero_title">Создаю легкие, высокоскоростные инструменты и приватные ИИ-системы</h1>
-                <p class="hero-subtitle" data-i18n="hero_desc">Чистый C11, POSIX утилиты, веб-клиенты без серверов-посредников и акцент на абсолютную производительность.</p>
+                <h1 class="hero-title" data-i18n="hero_title">Building lightweight, high-speed tools and privacy-first AI systems</h1>
+                <p class="hero-subtitle" data-i18n="hero_desc">Pure C11, POSIX utilities, serverless web clients with zero middlemen and absolute performance focus.</p>
                 <div class="hero-actions">
-                    <button onclick="openEcosystemModal()" class="btn btn-primary" data-i18n="btn_hub_open">Открыть Traliran AI Hub ↗</button>
+                    <a href="#ecosystem" class="btn btn-secondary" data-i18n="btn_view_projects">View projects ↓</a>
                     <a href="https://github.com/Traliran" target="_blank" class="btn btn-secondary">GitHub Profile ↗</a>
                 </div>
             </div>
@@ -45,23 +45,53 @@
         <!-- Main Featured Projects Section -->
         <section id="ecosystem" class="section">
             <div class="container">
-                <h2 class="section-title" data-i18n="title_projects">Проекты и Разработки</h2>
+                <h2 class="section-title" data-i18n="title_projects">Projects & Work</h2>
 
                 <div class="projects-grid">
-                    <!-- Traliran AI Hub Interactive Card -->
-                    <div class="card card-hero-hub glow-card" onclick="openEcosystemModal()">
-                        <div class="card-header">
-                            <span class="badge badge-accent">Core Hub</span>
-                            <span class="hub-click-hint">Кликните, чтобы открыть всю экосистему ➔</span>
-                        </div>
-                        <h3>Traliran AI Hub (Ecosystem)</h3>
-                        <p data-i18n="card_taih_short">Единый комплекс из Web-интерфейса, TUI для терминала и адаптаций под тайлинговые оконные менеджеры.</p>
-                        <div class="card-gallery-preview">
-                            <div class="thumb-box"><img src="assets/img/ai-hub-1.png" alt="T AI H Web" onerror="this.src='https://placehold.co/600x350/1e1e2e/cba6f7?text=Traliran+AI+Hub+UI'"></div>
-                            <div class="thumb-box"><img src="assets/img/cli-1.png" alt="T AI H CLI" onerror="this.src='https://placehold.co/600x350/181825/89b4fa?text=Traliran+AI+Hub+TUI'"></div>
+                    <!-- Traliran AI Hub -->
+                    <div class="card">
+                        <div class="card-header"><span class="badge badge-accent">Web Client</span></div>
+                        <h3>Traliran AI Hub</h3>
+                        <p data-i18n="card_taih_desc">Lightweight privacy-first LLM web client running in your browser: Groq, Gemini, OpenAI, OpenRouter, DeepSeek, Qwen, GLM, Claude and local Ollama / Llama.cpp with zero middlemen.</p>
+                        <div class="card-gallery-preview single">
+                            <div class="thumb-box"><img src="assets/img/ai-hub-1.png" alt="Traliran AI Hub Web" loading="lazy" onerror="this.src='https://placehold.co/600x350/1e1e2e/cba6f7?text=Traliran+AI+Hub+UI'"></div>
                         </div>
                         <div class="tags">
-                            <span>JavaScript</span><span>C / TUI</span><span>Local LLM</span><span>REST APIs</span>
+                            <span>JavaScript</span><span>Local LLM</span><span>REST APIs</span>
+                        </div>
+                        <div class="card-footer-actions">
+                            <a href="https://github.com/Traliran/traliran-ai-hub" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Repository ↗</a>
+                            <a href="https://traliran.github.io/traliran-ai-hub/" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Live Demo ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- Traliran AI Hub Driftwm -->
+                    <div class="card">
+                        <div class="card-header"><span class="badge">WM Edition</span></div>
+                        <h3>Traliran AI Hub Driftwm</h3>
+                        <p data-i18n="card_drift_desc">Special AI Hub edition in tiling window manager aesthetics: infinite desktop canvas and keyboard-first workflow.</p>
+                        <div class="card-gallery-preview single">
+                            <div class="thumb-box"><img src="assets/img/drift-1.png" alt="Traliran AI Hub Driftwm" loading="lazy" onerror="this.src='https://placehold.co/600x350/181825/89b4fa?text=AI+Hub+Driftwm'"></div>
+                        </div>
+                        <div class="tags">
+                            <span>JavaScript</span><span>Tiling WM</span><span>Desktop</span>
+                        </div>
+                        <div class="card-footer-actions">
+                            <a href="https://github.com/Traliran/traliran-ai-hub-driftwm" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Repository ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- Traliran AI Hub CLI -->
+                    <div class="card">
+                        <div class="card-header"><span class="badge">Terminal / TUI</span></div>
+                        <h3>Traliran AI Hub CLI</h3>
+                        <p data-i18n="card_cli_desc">Terminal-native AI Hub interface: parallel model benchmarking, Vim-mode and local backends right from the console.</p>
+                        <div class="card-gallery-preview single">
+                            <div class="thumb-box"><img src="assets/img/cli-1.png" alt="Traliran AI Hub CLI" loading="lazy" onerror="this.src='https://placehold.co/600x350/181825/89b4fa?text=AI+Hub+CLI'"></div>
+                        </div>
+                        <div class="tags"><span>C / TUI</span><span>Terminal</span><span>Benchmark</span></div>
+                        <div class="card-footer-actions">
+                            <a href="https://github.com/Traliran/traliran-ai-hub-cli" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Repository ↗</a>
                         </div>
                     </div>
 
@@ -69,7 +99,7 @@
                     <div class="card">
                         <div class="card-header"><span class="badge">POSIX Utility</span></div>
                         <h3>du-rank</h3>
-                        <p data-i18n="durank_desc">Ультрабыстрый анализатор занятого места на диске. Написан на C11 в одном файле, мгновенно визуализирует структуры папок прямо в терминале.</p>
+                        <p data-i18n="durank_desc">Ultra-fast disk usage analyzer. Single-file C11, instantly visualizes folder structures in the terminal.</p>
                         <div class="card-gallery-preview single">
                             <img src="assets/img/durank-preview.png" alt="du-rank screen" onerror="this.src='https://placehold.co/600x250/11111b/a6e3a1?text=du-rank+Terminal+ANSI'">
                         </div>
@@ -83,7 +113,7 @@
                     <div class="card">
                         <div class="card-header"><span class="badge">GTK4 / Desktop</span></div>
                         <h3>noteSS</h3>
-                        <p data-i18n="notess_desc">Минималистичный десктопный клиент для мгновенной отправки заметок в Memos API v1. Без тяжелых JSON-библиотек и фреймворков.</p>
+                        <p data-i18n="notess_desc">Minimalist desktop client for instant note capture to Memos API v1. No heavy JSON libs or frameworks.</p>
                         <div class="card-gallery-preview single">
                             <img src="assets/img/notess-preview.png" alt="noteSS screen" onerror="this.src='https://placehold.co/600x250/11111b/f38ba8?text=noteSS+GTK4+App'">
                         </div>
@@ -99,14 +129,14 @@
         <!-- Detailed About Me Section -->
         <section id="about" class="section section-about">
             <div class="container">
-                <h2 class="section-title" data-i18n="title_about">Обо мне и Инженерной философии</h2>
+                <h2 class="section-title" data-i18n="title_about">About & Engineering Philosophy</h2>
                 <div class="about-hero-block">
                     <div class="about-text">
                         <p class="lead-text" data-i18n="about_lead">
-                            Привет! Я <strong>Traliran</strong> — разработчик программного обеспечения, сфокусированный на создании легковесных системных утилит, кастомных десктопных окружений и приватных инструментов для работы с ИИ.
+                            Hi! I’m <strong>Traliran</strong> — a software developer focused on lightweight system utilities, custom desktop environments and privacy-first AI tools.
                         </p>
                         <p data-i18n="about_body">
-                            Мой подход основан на снижении системных накладных расходов: я предпочитаю чистый C11, ванильный JavaScript и POSIX-совместимые стандарты громоздким фреймворкам. Всё ПО разрабатывается по принципам Unix — каждая утилита делает одну вещь и делает её максимально быстро.
+                            My approach is about cutting overhead: pure C11, vanilla JavaScript and POSIX standards instead of bloated frameworks. All software follows the Unix way — do one thing and do it fast.
                         </p>
                     </div>
 
@@ -114,17 +144,17 @@
                         <div class="ph-card">
                             <div class="ph-icon">⚡</div>
                             <h4>Zero Bloatware</h4>
-                            <p data-i18n="ph_bloat">Минимальное потребление ОЗУ, отсутствие тяжелых зависимостей и мгновенный холодный запуск.</p>
+                            <p data-i18n="ph_bloat">Minimal RAM usage, no heavy dependencies and instant cold start.</p>
                         </div>
                         <div class="ph-card">
                             <div class="ph-icon">🔒</div>
                             <h4>Privacy First</h4>
-                            <p data-i18n="ph_privacy">Прямое взаимодействие клиент-сервер (включая работу с LLM) без сбора метрик и сторонних прокси.</p>
+                            <p data-i18n="ph_privacy">Direct client-server communication (including LLMs) with no metrics collection or third-party proxies.</p>
                         </div>
                         <div class="ph-card">
                             <div class="ph-icon">🛠</div>
                             <h4>System Stack</h4>
-                            <p><strong>OS:</strong> Arch Linux (DriftWM / GNOME)<br><strong>Editor & Terminal:</strong> Neovim, Kitty<br><strong>Primary Dev:</strong> C11, Shell, JS</p>
+                            <p><strong>OS:</strong> Arch Linux<br><strong>Editor & Terminal:</strong> Neovim, Kitty<br><strong>Primary Dev:</strong> C11, Shell, JS</p>
                         </div>
                     </div>
                 </div>
@@ -135,38 +165,24 @@
         <section id="news" class="section">
             <div class="container">
                 <div class="news-header">
-                    <h2 class="section-title" data-i18n="title_news">Новости и Релизы</h2>
+                    <h2 class="section-title" data-i18n="title_news">News & Releases</h2>
                     <span class="json-indicator">● Loaded dynamically from <code>news.json</code></span>
                 </div>
 
                 <div id="news-container" class="news-timeline">
-                    <!-- Загружается через JS из data/news.json -->
+                    <!-- Loaded via JS from data/news.json -->
                 </div>
 
                 <div class="devto-banner">
                     <div class="devto-info">
-                        <h3>Блог на Dev.to</h3>
-                        <p data-i18n="devto_desc">Публикую разборы системного программирования, Arch Linux, написания клиентов C/GTK и тонкостей оптимизации.</p>
+                        <h3>Blog on Dev.to</h3>
+                        <p data-i18n="devto_desc">I write about systems programming, Arch Linux, C/GTK clients and optimization details.</p>
                     </div>
-                    <a href="https://dev.to/traliran" target="_blank" class="btn btn-secondary">Читать на Dev.to ↗</a>
+                    <a href="https://dev.to/traliran" target="_blank" class="btn btn-secondary">Read on Dev.to ↗</a>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- Modal Ecosystem Window for Traliran AI Hub -->
-    <div id="ecosystem-modal" class="modal-overlay" onclick="closeEcosystemModal(event)">
-        <div class="modal-window">
-            <button class="modal-close" onclick="forceCloseModal()">✕</button>
-            <div class="modal-header">
-                <h2>🌐 Traliran AI Hub Ecosystem</h2>
-                <p id="modal-hub-desc">Полный каталог всех репозиториев и модулей, входящих в ИИ-экосистему.</p>
-            </div>
-            <div id="modal-repo-list" class="modal-repo-grid">
-                <!-- Динамическая подгрузка из data/ecosystem.json -->
-            </div>
-        </div>
-    </div>
 
     <!-- Isolated Distinct Footer -->
     <footer class="footer-separated">
@@ -178,23 +194,28 @@
                 </div>
 
                 <div class="footer-support-box">
-                    <h4 data-i18n="support_title">Поддержать разработку ☕</h4>
-                    <p data-i18n="support_sub">Если мои open-source проекты приносят вам пользу:</p>
+                    <h4 data-i18n="support_title">Support development ☕</h4>
+                    <p data-i18n="support_sub">If my open-source projects are useful to you:</p>
                     <div class="crypto-grid">
                         <div class="crypto-item">
-                            <span>TON:</span>
-                            <code>uqag...gqum</code>
-                            <button class="btn-copy" onclick="copyCrypto('eqc...')">Copy</button>
+                            <span>💎 TON:</span>
+                            <code title="UQAQ6hegIZbejKThqa3BYyuo7AX8yuRO2f8yQOP7Ke_QVWe9">UQAQ6heg...QVWe9</code>
+                            <button class="btn-copy" onclick="copyCrypto('UQAQ6hegIZbejKThqa3BYyuo7AX8yuRO2f8yQOP7Ke_QVWe9', this)">Copy</button>
                         </div>
                         <div class="crypto-item">
-                            <span>USDT (TRC20):</span>
-                            <code>vxm...j2px</code>
-                            <button class="btn-copy" onclick="copyCrypto('txx...')">Copy</button>
+                            <span>💵 USDT (TRC20):</span>
+                            <code title="TU8NDNVZJjHtJYLXPz124ZxxszDejjZcp3">TU8NDNVZ...jjZcp3</code>
+                            <button class="btn-copy" onclick="copyCrypto('TU8NDNVZJjHtJYLXPz124ZxxszDejjZcp3', this)">Copy</button>
                         </div>
                         <div class="crypto-item">
-                            <span>Solana:</span>
-                            <code>mxe...mvg</code>
-                            <button class="btn-copy" onclick="copyCrypto('sol...')">Copy</button>
+                            <span>🟣 Solana (SOL):</span>
+                            <code title="EAcmVHj1HSnSvtVCdFirBnA6wh7BiETmssN1yPjUnTvg">EAcmVHj1...UnTvg</code>
+                            <button class="btn-copy" onclick="copyCrypto('EAcmVHj1HSnSvtVCdFirBnA6wh7BiETmssN1yPjUnTvg', this)">Copy</button>
+                        </div>
+                        <div class="crypto-item">
+                            <span>🟡 BNB Chain:</span>
+                            <code title="0x56731151d6Ff21777f215499A46fC43843590D5b">0x5673...90D5b</code>
+                            <button class="btn-copy" onclick="copyCrypto('0x56731151d6Ff21777f215499A46fC43843590D5b', this)">Copy</button>
                         </div>
                     </div>
                 </div>
@@ -207,12 +228,12 @@
                 <div class="footer-socials">
                     <a href="https://t.me/Traliran" target="_blank">Telegram</a>
                     <a href="https://github.com/Traliran" target="_blank">GitHub</a>
-                    <a href="mailto:sistetake7511@gmail.com">Email</a>
+                    <a href="mailto:sitetake7511@gmail.com">Email</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
