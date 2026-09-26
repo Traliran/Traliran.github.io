@@ -1,0 +1,34 @@
+{
+  "hub": {
+    "title": "Traliran AI Hub Ecosystem",
+    "description_ru": "Полная экосистема свободных, приватных клиентов и инструментов для работы с LLM без посредников.",
+    "description_en": "Full ecosystem of lightweight, privacy-first AI clients & tools running directly against LLM APIs.",
+    "repositories": [
+      {
+        "name": "traliran-ai-hub",
+        "type": "Web Client / Sandbox",
+        "desc_ru": "Веб-интерфейс с поддержкой Groq, Gemini, DeepSeek, OpenRouter и локальных Ollama/llama.cpp.",
+        "desc_en": "Web UI with native support for Groq, Gemini, DeepSeek, OpenRouter, and local Ollama/llama.cpp.",
+        "url": "https://github.com/Traliran/traliran-ai-hub",
+        "demo": "https://traliran.github.io/traliran-ai-hub/",
+        "screenshots": ["assets/img/ai-hub-1.png", "assets/img/ai-hub-2.png"]
+      },
+      {
+        "name": "traliran-ai-hub-cli",
+        "type": "Terminal Client (TUI)",
+        "desc_ru": "Нейросетевой терминальный клиент с параллельным бенчмаркингом моделей и поддержкой Vim-mode.",
+        "desc_en": "Terminal UI AI client featuring model benchmarking, workspace RAG, and Vim keybindings.",
+        "url": "https://github.com/Traliran/traliran-ai-hub-cli",
+        "screenshots": ["assets/img/cli-1.png"]
+      },
+      {
+        "name": "traliran-ai-hub-driftwm",
+        "type": "WM Integrated Edition",
+        "desc_ru": "Специализированный дистрибутив интерфейса, адаптированный под эстетику плитчатых окнонников.",
+        "desc_en": "Specialized edition tuned for tiling window managers and minimalist workflows.",
+        "url": "https://github.com/Traliran/traliran-ai-hub-driftwm",
+        "screenshots": ["assets/img/drift-1.png"]
+      }
+    ]
+  }
+}

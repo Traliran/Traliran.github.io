@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "date": "2026-09-20",
+    "title_en": "noteSS 1.0 Release",
+    "title_ru": "Релиз noteSS 1.0",
+    "summary_en": "Ultra-light GTK4/C application for instant note-taking directly to Memos API.",
+    "summary_ru": "Ультралёгкое приложение на C и GTK4 для мгновенной отправки заметок в Memos API.",
+    "link": "https://github.com/Traliran/noteSS"
+  },
+  {
+    "id": 2,
+    "date": "2026-09-12",
+    "title_en": "du-rank Updated to v1.2.0",
+    "title_ru": "Обновление du-rank до v1.2.0",
+    "summary_en": "Faster POSIX directory tree sorting and improved ANSI terminal bars.",
+    "summary_ru": "Ускоренная сортировка деревьев директорий и обновленные ANSI-шкалы в терминале.",
+    "link": "https://github.com/Traliran/du-rank"
+  }
+]

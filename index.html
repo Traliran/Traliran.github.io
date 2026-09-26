@@ -1,1 +1,218 @@
-<meta http-equiv="refresh" content="0;url=https://traliran.github.io/traliran-ai-hub">
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traliran — Software Craftsman & Open Source Ecosystem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+</head>
+<body>
+
+    <!-- Header / Nav -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-symbol">&gt;_</span> TRALIRAN
+            </a>
+            <nav class="nav-links">
+                <a href="#ecosystem" data-i18n="nav_ecosystem">Экосистема</a>
+                <a href="#about" data-i18n="nav_about">Обо мне</a>
+                <a href="#news" data-i18n="nav_news">Новости</a>
+                <a href="https://dev.to/traliran" target="_blank" class="ext-link">Dev.to ↗</a>
+            </nav>
+            <div class="nav-controls">
+                <button id="lang-toggle" class="btn-pill">RU</button>
+                <button id="theme-toggle" class="btn-pill">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero fade-in">
+            <div class="container">
+                <div class="hero-badge" data-i18n="hero_badge">✨ Minimalist Unix & AI Ecosystem</div>
+                <h1 class="hero-title" data-i18n="hero_title">Создаю легкие, высокоскоростные инструменты и приватные ИИ-системы</h1>
+                <p class="hero-subtitle" data-i18n="hero_desc">Чистый C11, POSIX утилиты, веб-клиенты без серверов-посредников и акцент на абсолютную производительность.</p>
+                <div class="hero-actions">
+                    <button onclick="openEcosystemModal()" class="btn btn-primary" data-i18n="btn_hub_open">Открыть Traliran AI Hub ↗</button>
+                    <a href="https://github.com/Traliran" target="_blank" class="btn btn-secondary">GitHub Profile ↗</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Featured Projects Section -->
+        <section id="ecosystem" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="title_projects">Проекты и Разработки</h2>
+
+                <div class="projects-grid">
+                    <!-- Traliran AI Hub Interactive Card -->
+                    <div class="card card-hero-hub glow-card" onclick="openEcosystemModal()">
+                        <div class="card-header">
+                            <span class="badge badge-accent">Core Hub</span>
+                            <span class="hub-click-hint">Кликните, чтобы открыть всю экосистему ➔</span>
+                        </div>
+                        <h3>Traliran AI Hub (Ecosystem)</h3>
+                        <p data-i18n="card_taih_short">Единый комплекс из Web-интерфейса, TUI для терминала и адаптаций под тайлинговые оконные менеджеры.</p>
+                        <div class="card-gallery-preview">
+                            <div class="thumb-box"><img src="assets/img/ai-hub-1.png" alt="T AI H Web" onerror="this.src='https://placehold.co/600x350/1e1e2e/cba6f7?text=Traliran+AI+Hub+UI'"></div>
+                            <div class="thumb-box"><img src="assets/img/cli-1.png" alt="T AI H CLI" onerror="this.src='https://placehold.co/600x350/181825/89b4fa?text=Traliran+AI+Hub+TUI'"></div>
+                        </div>
+                        <div class="tags">
+                            <span>JavaScript</span><span>C / TUI</span><span>Local LLM</span><span>REST APIs</span>
+                        </div>
+                    </div>
+
+                    <!-- du-rank -->
+                    <div class="card">
+                        <div class="card-header"><span class="badge">POSIX Utility</span></div>
+                        <h3>du-rank</h3>
+                        <p data-i18n="durank_desc">Ультрабыстрый анализатор занятого места на диске. Написан на C11 в одном файле, мгновенно визуализирует структуры папок прямо в терминале.</p>
+                        <div class="card-gallery-preview single">
+                            <img src="assets/img/durank-preview.png" alt="du-rank screen" onerror="this.src='https://placehold.co/600x250/11111b/a6e3a1?text=du-rank+Terminal+ANSI'">
+                        </div>
+                        <div class="tags"><span>C11</span><span>POSIX</span><span>Disk Analyzer</span></div>
+                        <div class="card-footer-actions">
+                            <a href="https://github.com/Traliran/du-rank" target="_blank" class="btn btn-sm btn-outline">Repository ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- noteSS -->
+                    <div class="card">
+                        <div class="card-header"><span class="badge">GTK4 / Desktop</span></div>
+                        <h3>noteSS</h3>
+                        <p data-i18n="notess_desc">Минималистичный десктопный клиент для мгновенной отправки заметок в Memos API v1. Без тяжелых JSON-библиотек и фреймворков.</p>
+                        <div class="card-gallery-preview single">
+                            <img src="assets/img/notess-preview.png" alt="noteSS screen" onerror="this.src='https://placehold.co/600x250/11111b/f38ba8?text=noteSS+GTK4+App'">
+                        </div>
+                        <div class="tags"><span>Pure C</span><span>GTK 4</span><span>libcurl</span></div>
+                        <div class="card-footer-actions">
+                            <a href="https://github.com/Traliran/noteSS" target="_blank" class="btn btn-sm btn-outline">Repository ↗</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed About Me Section -->
+        <section id="about" class="section section-about">
+            <div class="container">
+                <h2 class="section-title" data-i18n="title_about">Обо мне и Инженерной философии</h2>
+                <div class="about-hero-block">
+                    <div class="about-text">
+                        <p class="lead-text" data-i18n="about_lead">
+                            Привет! Я <strong>Traliran</strong> — разработчик программного обеспечения, сфокусированный на создании легковесных системных утилит, кастомных десктопных окружений и приватных инструментов для работы с ИИ.
+                        </p>
+                        <p data-i18n="about_body">
+                            Мой подход основан на снижении системных накладных расходов: я предпочитаю чистый C11, ванильный JavaScript и POSIX-совместимые стандарты громоздким фреймворкам. Всё ПО разрабатывается по принципам Unix — каждая утилита делает одну вещь и делает её максимально быстро.
+                        </p>
+                    </div>
+
+                    <div class="philosophy-grid">
+                        <div class="ph-card">
+                            <div class="ph-icon">⚡</div>
+                            <h4>Zero Bloatware</h4>
+                            <p data-i18n="ph_bloat">Минимальное потребление ОЗУ, отсутствие тяжелых зависимостей и мгновенный холодный запуск.</p>
+                        </div>
+                        <div class="ph-card">
+                            <div class="ph-icon">🔒</div>
+                            <h4>Privacy First</h4>
+                            <p data-i18n="ph_privacy">Прямое взаимодействие клиент-сервер (включая работу с LLM) без сбора метрик и сторонних прокси.</p>
+                        </div>
+                        <div class="ph-card">
+                            <div class="ph-icon">🛠</div>
+                            <h4>System Stack</h4>
+                            <p><strong>OS:</strong> Arch Linux (DriftWM / GNOME)<br><strong>Editor & Terminal:</strong> Neovim, Kitty<br><strong>Primary Dev:</strong> C11, Shell, JS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic News Section -->
+        <section id="news" class="section">
+            <div class="container">
+                <div class="news-header">
+                    <h2 class="section-title" data-i18n="title_news">Новости и Релизы</h2>
+                    <span class="json-indicator">● Loaded dynamically from <code>news.json</code></span>
+                </div>
+
+                <div id="news-container" class="news-timeline">
+                    <!-- Загружается через JS из data/news.json -->
+                </div>
+
+                <div class="devto-banner">
+                    <div class="devto-info">
+                        <h3>Блог на Dev.to</h3>
+                        <p data-i18n="devto_desc">Публикую разборы системного программирования, Arch Linux, написания клиентов C/GTK и тонкостей оптимизации.</p>
+                    </div>
+                    <a href="https://dev.to/traliran" target="_blank" class="btn btn-secondary">Читать на Dev.to ↗</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Ecosystem Window for Traliran AI Hub -->
+    <div id="ecosystem-modal" class="modal-overlay" onclick="closeEcosystemModal(event)">
+        <div class="modal-window">
+            <button class="modal-close" onclick="forceCloseModal()">✕</button>
+            <div class="modal-header">
+                <h2>🌐 Traliran AI Hub Ecosystem</h2>
+                <p id="modal-hub-desc">Полный каталог всех репозиториев и модулей, входящих в ИИ-экосистему.</p>
+            </div>
+            <div id="modal-repo-list" class="modal-repo-grid">
+                <!-- Динамическая подгрузка из data/ecosystem.json -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Isolated Distinct Footer -->
+    <footer class="footer-separated">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>&gt;_ TRALIRAN</h3>
+                    <p data-i18n="footer_slogan">Crafting lightweight Linux ecosystem & privacy-first AI software.</p>
+                </div>
+
+                <div class="footer-support-box">
+                    <h4 data-i18n="support_title">Поддержать разработку ☕</h4>
+                    <p data-i18n="support_sub">Если мои open-source проекты приносят вам пользу:</p>
+                    <div class="crypto-grid">
+                        <div class="crypto-item">
+                            <span>TON:</span>
+                            <code>uqag...gqum</code>
+                            <button class="btn-copy" onclick="copyCrypto('eqc...')">Copy</button>
+                        </div>
+                        <div class="crypto-item">
+                            <span>USDT (TRC20):</span>
+                            <code>vxm...j2px</code>
+                            <button class="btn-copy" onclick="copyCrypto('txx...')">Copy</button>
+                        </div>
+                        <div class="crypto-item">
+                            <span>Solana:</span>
+                            <code>mxe...mvg</code>
+                            <button class="btn-copy" onclick="copyCrypto('sol...')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Traliran. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="https://t.me/Traliran" target="_blank">Telegram</a>
+                    <a href="https://github.com/Traliran" target="_blank">GitHub</a>
+                    <a href="mailto:sistetake7511@gmail.com">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
