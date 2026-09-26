@@ -123,7 +123,92 @@ function setupEventListeners() {
         applyLang(currentLang === 'en' ? 'ru' : 'en');
     });
     document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    setupProjectModal();
     applyLang('en');
+}
+
+// Click on a mini card opens a detail window with the SAME title / image / description
+function setupProjectModal() {
+    const modal = document.getElementById('project-modal');
+    if (!modal) return;
+    const modalBadge = document.getElementById('project-modal-badge');
+    const modalTitle = document.getElementById('project-modal-title');
+    const modalImg = document.getElementById('project-modal-image');
+    const modalDesc = document.getElementById('project-modal-desc');
+    const modalTags = document.getElementById('project-modal-tags');
+    const modalLinks = document.getElementById('project-modal-links');
+    const closeBtn = document.getElementById('project-modal-close');
+
+    function openFromCard(card) {
+        const badge = card.querySelector('.card-header .badge');
+        const title = card.querySelector('h3');
+        const desc = card.querySelector('p');
+        const img = card.querySelector('.card-gallery-preview img');
+        const tags = card.querySelectorAll('.tags span');
+        const links = card.querySelectorAll('.card-footer-actions a');
+
+        modalBadge.innerText = badge ? badge.innerText : '';
+        modalTitle.innerText = title ? title.innerText : '';
+        modalDesc.innerText = desc ? desc.innerText : '';
+
+        if (img) {
+            modalImg.onerror = null;
+            modalImg.src = img.currentSrc || img.src;
+            modalImg.alt = img.alt || modalTitle.innerText;
+        } else {
+            modalImg.removeAttribute('src');
+            modalImg.alt = modalTitle.innerText;
+        }
+
+        modalTags.innerHTML = '';
+        tags.forEach(t => {
+            const s = document.createElement('span');
+            s.innerText = t.innerText;
+            modalTags.appendChild(s);
+        });
+
+        modalLinks.innerHTML = '';
+        links.forEach(a => {
+            const copy = document.createElement('a');
+            copy.href = a.href;
+            copy.target = '_blank';
+            copy.rel = 'noopener';
+            copy.className = a.className;
+            copy.innerText = a.innerText;
+            modalLinks.appendChild(copy);
+        });
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.project-card').forEach(card => {
+        // Open on click anywhere except real links/buttons
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('a, button')) return;
+            openFromCard(card);
+        });
+        // Keyboard: Enter / Space opens
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openFromCard(card);
+            }
+        });
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    closeBtn.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
 }
 
 async function copyCrypto(text, btn) {

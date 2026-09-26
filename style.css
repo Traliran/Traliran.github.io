@@ -179,6 +179,31 @@ body {
 /* Links inside cards must always be clickable */
 .card a, .news-item a, .footer-socials a, .devto-banner a { position: relative; z-index: 2; }
 
+/* Clickable project cards */
+.project-card { cursor: zoom-in; }
+.project-card:hover { border-color: rgba(53, 132, 228, 0.55); }
+.project-card:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: 3px; }
+.card-header .zoom-hint {
+    margin-left: auto;
+    color: var(--text-muted);
+    font-size: 1rem;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+.project-card:hover .zoom-hint { opacity: 1; color: var(--accent-blue); }
+
+/* Modal Window */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(10px); display: none; justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s ease; padding: 24px; }
+.modal-overlay.active { display: flex; opacity: 1; }
+.modal-window { background: var(--card-bg); width: 90%; max-width: 900px; max-height: 85vh; border-radius: var(--radius-lg); border: 1px solid var(--border-color); padding: 36px; overflow-y: auto; position: relative; animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+.modal-close { position: absolute; top: 20px; right: 20px; background: none; border: 1px solid var(--border-color); border-radius: 999px; width: 38px; height: 38px; color: var(--text-primary); font-size: 1rem; cursor: pointer; transition: var(--transition); }
+.modal-close:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+.modal-header { margin-bottom: 20px; padding-right: 50px; }
+.modal-header h2 { margin-top: 12px; font-size: 1.7rem; }
+.project-modal-window p { color: var(--text-muted); line-height: 1.8; margin: 20px 0 8px; font-size: 1.05rem; }
+.project-modal-image-wrap { margin: 8px 0 4px; }
+.project-modal-image-wrap img { width: 100%; max-height: 52vh; object-fit: contain; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--border-color); display: block; }
+
 @media (max-width: 860px) {
     .hero { padding: 90px 0 70px; }
     .hero-title { font-size: 2.1rem; }

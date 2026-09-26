@@ -49,8 +49,8 @@
 
                 <div class="projects-grid">
                     <!-- Traliran AI Hub -->
-                    <div class="card">
-                        <div class="card-header"><span class="badge badge-accent">Web Client</span></div>
+                    <div class="card project-card" tabindex="0">
+                        <div class="card-header"><span class="badge badge-accent">Web Client</span><span class="zoom-hint" title="Open details">⤢</span></div>
                         <h3>Traliran AI Hub</h3>
                         <p data-i18n="card_taih_desc">Lightweight privacy-first LLM web client running in your browser: Groq, Gemini, OpenAI, OpenRouter, DeepSeek, Qwen, GLM, Claude and local Ollama / Llama.cpp with zero middlemen.</p>
                         <div class="card-gallery-preview single">
@@ -66,8 +66,8 @@
                     </div>
 
                     <!-- Traliran AI Hub Driftwm -->
-                    <div class="card">
-                        <div class="card-header"><span class="badge">WM Edition</span></div>
+                    <div class="card project-card" tabindex="0">
+                        <div class="card-header"><span class="badge">WM Edition</span><span class="zoom-hint" title="Open details">⤢</span></div>
                         <h3>Traliran AI Hub Driftwm</h3>
                         <p data-i18n="card_drift_desc">Special AI Hub edition in tiling window manager aesthetics: infinite desktop canvas and keyboard-first workflow.</p>
                         <div class="card-gallery-preview single">
@@ -82,8 +82,8 @@
                     </div>
 
                     <!-- Traliran AI Hub CLI -->
-                    <div class="card">
-                        <div class="card-header"><span class="badge">Terminal / TUI</span></div>
+                    <div class="card project-card" tabindex="0">
+                        <div class="card-header"><span class="badge">Terminal / TUI</span><span class="zoom-hint" title="Open details">⤢</span></div>
                         <h3>Traliran AI Hub CLI</h3>
                         <p data-i18n="card_cli_desc">Terminal-native AI Hub interface: parallel model benchmarking, Vim-mode and local backends right from the console.</p>
                         <div class="card-gallery-preview single">
@@ -96,8 +96,8 @@
                     </div>
 
                     <!-- du-rank -->
-                    <div class="card">
-                        <div class="card-header"><span class="badge">POSIX Utility</span></div>
+                    <div class="card project-card" tabindex="0">
+                        <div class="card-header"><span class="badge">POSIX Utility</span><span class="zoom-hint" title="Open details">⤢</span></div>
                         <h3>du-rank</h3>
                         <p data-i18n="durank_desc">Ultra-fast disk usage analyzer. Single-file C11, instantly visualizes folder structures in the terminal.</p>
                         <div class="card-gallery-preview single">
@@ -110,8 +110,8 @@
                     </div>
 
                     <!-- noteSS -->
-                    <div class="card">
-                        <div class="card-header"><span class="badge">GTK4 / Desktop</span></div>
+                    <div class="card project-card" tabindex="0">
+                        <div class="card-header"><span class="badge">GTK4 / Desktop</span><span class="zoom-hint" title="Open details">⤢</span></div>
                         <h3>noteSS</h3>
                         <p data-i18n="notess_desc">Minimalist desktop client for instant note capture to Memos API v1. No heavy JSON libs or frameworks.</p>
                         <div class="card-gallery-preview single">
@@ -183,6 +183,23 @@
             </div>
         </section>
     </main>
+
+    <!-- Project detail modal: same title / image / description as the mini card -->
+    <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-window project-modal-window">
+            <button class="modal-close" id="project-modal-close" aria-label="Close">✕</button>
+            <div class="modal-header">
+                <span id="project-modal-badge" class="badge"></span>
+                <h2 id="project-modal-title"></h2>
+            </div>
+            <div class="project-modal-image-wrap">
+                <img id="project-modal-image" src="" alt="">
+            </div>
+            <p id="project-modal-desc"></p>
+            <div id="project-modal-tags" class="tags"></div>
+            <div id="project-modal-links" class="card-footer-actions"></div>
+        </div>
+    </div>
 
     <!-- Isolated Distinct Footer -->
     <footer class="footer-separated">
