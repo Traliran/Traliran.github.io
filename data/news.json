@@ -1,6 +1,15 @@
 [
   {
     "id": 1,
+    "date": "2026-09-28",
+    "title_en": "noteSS 1.1 Added note caching",
+    "title_ru": "Обновление noteSS 1.1 Добавлено кеширование заметок",
+    "summary_en": "Now, if the Memos server is unavailable, notes are cached and then sent to the server the next time the app is opened.",
+    "summary_ru": "Теперь, если сервер Memos недоступен, заметки сохраняются в кэше и отправляются на сервер при следующем запуске приложения.",
+    "link": "https://github.com/Traliran/notess/releases/tag/1.1.0"
+  },
+  {
+    "id": 2,
     "date": "2026-09-20",
     "title_en": "noteSS 1.0 Release",
     "title_ru": "Релиз noteSS 1.0",
@@ -9,7 +18,7 @@
     "link": "https://github.com/Traliran/noteSS"
   },
   {
-    "id": 2,
+    "id": 3,
     "date": "2026-09-12",
     "title_en": "du-rank Updated to v1.2.0",
     "title_ru": "Обновление du-rank до v1.2.0",
