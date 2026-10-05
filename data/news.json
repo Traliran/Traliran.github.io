@@ -1,6 +1,15 @@
 [
   {
     "id": 1,
+    "date": "2026-10-02",
+    "title_en": "T AI H — IDE update:",
+    "title_ru": "T AI H - обновление IDE",
+    "summary_en": "full backward compatibility with Git added, agentic-only mode, and more; details in release note",
+    "summary_ru": "добавлена полная обратная совместимость с git, режим agentic only и другое, подробнее в релизе.",
+    "link": "https://github.com/Traliran/traliran-ai-hub/releases/tag/3.0.0"
+  },
+  {
+    "id": 2,
     "date": "2026-09-28",
     "title_en": "noteSS 1.1 Added note caching",
     "title_ru": "Обновление noteSS 1.1 Добавлено кеширование заметок",
@@ -9,7 +18,7 @@
     "link": "https://github.com/Traliran/notess/releases/tag/1.1.0"
   },
   {
-    "id": 2,
+    "id": 3,
     "date": "2026-09-20",
     "title_en": "noteSS 1.0 Release",
     "title_ru": "Релиз noteSS 1.0",
@@ -18,7 +27,7 @@
     "link": "https://github.com/Traliran/noteSS"
   },
   {
-    "id": 3,
+    "id": 4,
     "date": "2026-09-12",
     "title_en": "du-rank Updated to v1.2.0",
     "title_ru": "Обновление du-rank до v1.2.0",
