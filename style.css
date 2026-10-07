@@ -248,9 +248,15 @@ body {
 .blog-error { text-align: center; padding: 40px; border: 1px dashed var(--border-color); border-radius: var(--radius-lg); color: var(--text-muted); }
 .blog-error .hero-actions { margin-top: 20px; }
 
-/* Reader — full article on-site */
-.blog-reader { max-width: 820px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 44px; }
-.reader-topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+/* Reader — full article on-site, opened as an overlay above the page */
+.reader-overlay { position: fixed; inset: 0; z-index: 1200; display: flex; align-items: center; justify-content: center; padding: 24px; opacity: 0; transition: opacity 0.22s ease; }
+.reader-overlay[hidden] { display: none; }
+.reader-overlay.active { opacity: 1; }
+.reader-backdrop { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+body.reader-open { overflow: hidden; }
+.blog-reader { position: relative; width: 100%; max-width: 820px; max-height: calc(100vh - 48px); margin: 0 auto; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 44px; overflow-y: auto; overscroll-behavior: contain; transform: translateY(24px) scale(0.985); transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1); }
+.reader-overlay.active .blog-reader { transform: none; }
+.reader-topbar { position: sticky; top: -44px; z-index: 3; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; padding: 10px 0 14px; background: linear-gradient(var(--card-bg) 75%, transparent); }
 .reader-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .reader-title { font-size: 2rem; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 14px; }
 .reader-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
@@ -273,6 +279,8 @@ body {
 .reader-bottom { margin-top: 36px; margin-bottom: 0; }
 
 @media (max-width: 860px) {
-    .blog-reader { padding: 26px 20px; }
+    .reader-overlay { padding: 12px; }
+    .blog-reader { max-height: calc(100vh - 24px); padding: 24px 18px; }
+    .reader-topbar { top: -24px; }
     .reader-title { font-size: 1.5rem; }
 }

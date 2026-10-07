@@ -15,7 +15,7 @@
         function (u) { return 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(u); }
     ];
 
-    var state = { posts: [], currentLang: 'en', openedId: null };
+    var state = { posts: [], currentLang: 'en', openedId: null, scrollY: 0 };
 
     var i18n = {
         en: {
@@ -282,10 +282,8 @@
         var p = findPost(id);
         if (!p) return;
         state.openedId = id;
-        $('blog-list').hidden = true;
-        document.querySelector('.blog-toolbar').style.display = 'none';
-        var reader = $('blog-reader');
-        reader.hidden = false;
+        if (!state.scrollY) state.scrollY = window.scrollY;
+        openOverlay();
         $('reader-title').textContent = p.title;
         $('reader-date').textContent = fmtDate(p.pubDate);
         $('reader-tags').innerHTML = p.tags.map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('');
@@ -301,11 +299,11 @@
             } else {
                 $('reader-cover-wrap').hidden = true;
             }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         };
+        $('reader-body').scrollTop = 0;
+        $('blog-reader').scrollTop = 0;
         if (p.needsFetch && !p.fullLoaded) {
             $('reader-body').innerHTML = '<p>Loading full text…</p>';
-            window.scrollTo({ top: 0 });
             fetchFullBody(p).then(showBody);
         } else {
             showBody();
@@ -315,14 +313,35 @@
         }
     }
 
+    // Reader opens above the page (overlay), list stays untouched underneath.
+    function openOverlay() {
+        var ov = $('reader-overlay');
+        ov.hidden = false;
+        document.body.classList.add('reader-open');
+        // force reflow so the transition runs on every open
+        void ov.offsetWidth;
+        ov.classList.add('active');
+        $('reader-close').focus();
+    }
+
     function closePost() {
         state.openedId = null;
-        $('blog-reader').hidden = true;
-        $('blog-list').hidden = false;
-        document.querySelector('.blog-toolbar').style.display = '';
+        var ov = $('reader-overlay');
+        ov.classList.remove('active');
+        document.body.classList.remove('reader-open');
+        var done = function () { ov.hidden = true; };
+        if (ov.addEventListener) {
+            ov.addEventListener('transitionend', done, { once: true });
+            setTimeout(done, 300); // fallback if transition never fires
+        } else {
+            done();
+        }
         try {
             history.replaceState(null, '', location.pathname + location.search);
         } catch (e) { /* ignore */ }
+        var y = state.scrollY || 0;
+        state.scrollY = 0;
+        window.scrollTo({ top: y, behavior: 'auto' });
     }
 
     // ---------- Boot ----------
@@ -370,8 +389,10 @@
         var h = (location.hash || '').replace(/^#post-/, '');
         if (h) {
             var id = decodeURIComponent(h);
-            if (findPost(id)) openPost(id, false);
+            if (findPost(id)) { openPost(id, false); return; }
         }
+        // hash cleared (browser Back) -> close the overlay
+        if (state.openedId) closePost();
     }
 
     // theme (shared with index via localStorage)
@@ -416,6 +437,11 @@
         $('blog-retry').addEventListener('click', function () { boot(true); });
         $('reader-back').addEventListener('click', closePost);
         $('reader-back-bottom').addEventListener('click', closePost);
+        $('reader-close').addEventListener('click', closePost);
+        $('reader-backdrop').addEventListener('click', closePost);
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && state.openedId) closePost();
+        });
         $('reader-copy').addEventListener('click', function () {
             var url = location.href;
             var done = function () {
