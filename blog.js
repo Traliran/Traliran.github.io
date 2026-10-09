@@ -19,7 +19,7 @@
 
     var i18n = {
         en: {
-            nav_ecosystem: 'Ecosystem', nav_about: 'About', nav_news: 'News', nav_blog: 'Blog',
+            nav_ecosystem: 'Ecosystem', nav_about: 'About', nav_news: 'News', nav_blog: 'Blog', nav_b2b: 'B2B',
             blog_badge: 'Blog — synced from dev.to RSS',
             blog_title: 'Articles, readable right here',
             blog_refresh: 'Refresh', blog_error: 'Could not load the RSS feed.',
@@ -29,7 +29,7 @@
             articles: 'articles', copied: '✓ Copied', copy_link: 'Copy link'
         },
         ru: {
-            nav_ecosystem: 'Экосистема', nav_about: 'Обо мне', nav_news: 'Новости', nav_blog: 'Блог',
+            nav_ecosystem: 'Экосистема', nav_about: 'Обо мне', nav_news: 'Новости', nav_blog: 'Блог', nav_b2b: 'B2B',
             blog_badge: 'Блог — синхронизация с dev.to RSS',
             blog_title: 'Статьи — читайте прямо здесь',
             blog_refresh: 'Обновить', blog_error: 'Не удалось загрузить RSS-ленту.',

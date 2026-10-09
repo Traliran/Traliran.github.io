@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Traliran</title>
+    <meta name="description" content="Traliran blog: systems programming, Arch Linux, C/GTK clients, AI. Full articles readable on-site, synced from dev.to RSS.">
+    <link rel="alternate" type="application/rss+xml" title="Traliran on DEV" href="https://dev.to/feed/traliran">
+    <link rel="canonical" href="https://traliran.github.io/blog/">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../" class="logo">
+                <span class="logo-symbol">&gt;_</span> TRALIRAN
+            </a>
+            <nav class="nav-links">
+                <a href="../#ecosystem" data-i18n="nav_ecosystem">Ecosystem</a>
+                <a href="../#about" data-i18n="nav_about">About</a>
+                <a href="../#news" data-i18n="nav_news">News</a>
+                <a href="./" class="nav-active" data-i18n="nav_blog">Blog</a>
+                <a href="../b2b/" data-i18n="nav_b2b">B2B</a>
+                <a href="https://dev.to/traliran" target="_blank" class="ext-link">Dev.to ↗</a>
+            </nav>
+            <div class="nav-controls">
+                <button id="lang-toggle" class="btn-pill">EN</button>
+                <button id="theme-toggle" class="btn-pill">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero blog-hero fade-in">
+            <div class="container">
+                <div class="hero-badge">📰 <span data-i18n="blog_badge">Blog — synced from dev.to RSS</span></div>
+                <h1 class="hero-title" data-i18n="blog_title">Articles, readable right here</h1>
+                <div class="hero-actions blog-toolbar">
+                    <input id="blog-search" type="search" class="blog-search" placeholder="Search articles…" aria-label="Search articles">
+                    <select id="blog-tag-filter" class="blog-select" aria-label="Filter by tag">
+                        <option value="">All tags</option>
+                    </select>
+                    <a class="btn btn-sm btn-outline" href="https://dev.to/feed/traliran" target="_blank" rel="noopener" title="Original RSS feed">RSS ↗</a>
+                    <button id="blog-refresh" class="btn btn-sm btn-outline" title="Refetch feed">↻ <span data-i18n="blog_refresh">Refresh</span></button>
+                </div>
+                <p class="blog-status"><span id="blog-count"></span><span id="blog-updated" class="blog-updated"></span></p>
+            </div>
+        </section>
+
+        <section class="section blog-section">
+            <div class="container">
+                <!-- List view -->
+                <div id="blog-list" class="blog-grid"></div>
+                <div id="blog-loading" class="blog-loading" hidden>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+                <div id="blog-error" class="blog-error" hidden>
+                    <p>⚠️ <span data-i18n="blog_error">Could not load the RSS feed.</span></p>
+                    <div class="hero-actions">
+                        <button id="blog-retry" class="btn btn-secondary">Retry ↻</button>
+                        <a class="btn btn-secondary" href="https://dev.to/traliran" target="_blank" rel="noopener">Open on Dev.to ↗</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Reader view (full article on-site) — overlay above the page -->
+        <div id="reader-overlay" class="reader-overlay" hidden>
+            <div class="reader-backdrop" id="reader-backdrop"></div>
+            <article id="blog-reader" class="blog-reader" role="dialog" aria-modal="true" aria-labelledby="reader-title">
+                <div class="reader-topbar">
+                    <button id="reader-back" class="btn btn-sm btn-outline">← <span data-i18n="blog_back">All articles</span></button>
+                    <div class="reader-actions">
+                        <button id="reader-copy" class="btn btn-sm btn-outline">Copy link</button>
+                        <a id="reader-original" class="btn btn-sm btn-outline" href="#" target="_blank" rel="noopener">Dev.to ↗</a>
+                        <button id="reader-close" class="btn btn-sm btn-outline" title="Close" aria-label="Close">✕</button>
+                    </div>
+                </div>
+                <h2 id="reader-title" class="reader-title"></h2>
+                <div class="reader-meta">
+                    <span id="reader-date" class="news-date"></span>
+                    <span id="reader-tags" class="tags"></span>
+                </div>
+                <div id="reader-cover-wrap" class="reader-cover-wrap" hidden>
+                    <img id="reader-cover" src="" alt="" loading="lazy">
+                </div>
+                <div id="reader-body" class="reader-body"></div>
+                <div class="reader-topbar reader-bottom">
+                    <button id="reader-back-bottom" class="btn btn-sm btn-outline">← <span data-i18n="blog_back2">All articles</span></button>
+                    <a id="reader-original-bottom" class="btn btn-sm btn-outline" href="#" target="_blank" rel="noopener">Dev.to ↗</a>
+                </div>
+            </article>
+        </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-separated">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Traliran. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="../">Home</a>
+                    <a href="https://dev.to/traliran" target="_blank">Dev.to</a>
+                    <a href="https://github.com/Traliran" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../blog.js"></script>
+</body>
+</html>

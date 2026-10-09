@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2B & Custom Builds — Traliran</title>
+    <meta name="description" content="Turn-key branded Traliran AI Hub deployments for teams: custom branding, self-hosted Python/SQLite sync, custom features. Pay once, use forever.">
+    <link rel="canonical" href="https://traliran.github.io/b2b/">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../" class="logo">
+                <span class="logo-symbol">&gt;_</span> TRALIRAN
+            </a>
+            <nav class="nav-links">
+                <a href="../#ecosystem" data-i18n="nav_ecosystem">Ecosystem</a>
+                <a href="../#about" data-i18n="nav_about">About</a>
+                <a href="../#news" data-i18n="nav_news">News</a>
+                <a href="../blog/" data-i18n="nav_blog">Blog</a>
+                <a href="./" class="nav-active" data-i18n="nav_b2b">B2B</a>
+                <a href="https://dev.to/traliran" target="_blank" class="ext-link">Dev.to ↗</a>
+            </nav>
+            <div class="nav-controls">
+                <button id="lang-toggle" class="btn-pill">EN</button>
+                <button id="theme-toggle" class="btn-pill">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero b2b-hero fade-in">
+            <div class="container">
+                <div class="hero-badge">🛠️ Custom Builds & B2B</div>
+                <h1 class="hero-title">Custom Builds, B2B Deployments & Integrations</h1>
+                <p class="hero-subtitle"><strong>Traliran AI Hub</strong> is 100% free and open-source under the AGPLv3 license. If you are a team, agency, or Web3 project that needs a ready-to-use, zero-server AI workspace tailored to your internal workflows without spending weeks on configuration — I provide custom turn-key deployments.</p>
+                <div class="hero-actions">
+                    <a href="https://forms.gle/XpTQRCrpGdsbPiR48" target="_blank" rel="noopener" class="btn btn-primary">Order Custom Build ↗</a>
+                    <a href="#services" class="btn btn-secondary">View services ↓</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title">Available B2B Services</h2>
+                <p class="b2b-section-sub">Pay once for implementation, use forever with your own API keys.</p>
+
+                <div class="projects-grid">
+                    <!-- Tier 1 -->
+                    <div class="card">
+                        <div class="card-header"><span class="badge badge-accent">Tier 1</span></div>
+                        <h3>Branded Workspace</h3>
+                        <div class="price-tag">$150 – $300</div>
+                        <ul class="check-list">
+                            <li><strong>Custom UI Branding:</strong> your company logo, color palette, and custom styling.</li>
+                            <li><strong>Team Prompt Library:</strong> pre-configured system prompts and templates tailored for your team's everyday tasks.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tier 2 -->
+                    <div class="card">
+                        <div class="card-header"><span class="badge badge-accent">Tier 2</span></div>
+                        <h3>Self-Hosted Hub + Python/SQLite Sync</h3>
+                        <div class="price-tag">$300 – $700</div>
+                        <ul class="check-list">
+                            <li>Everything in <strong>Branded Workspace</strong>.</li>
+                            <li><strong>Lightweight Local Backend:</strong> fast Python + SQLite micro-service for optional internal history and prompt synchronization between team members without third-party SaaS dependency.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tier 3 -->
+                    <div class="card">
+                        <div class="card-header"><span class="badge badge-accent">Tier 3</span></div>
+                        <h3>Custom Feature Development</h3>
+                        <div class="price-tag">$300+</div>
+                        <ul class="check-list">
+                            <li>Specialized sandbox environments.</li>
+                            <li>Custom API integrations, data parsers, or specific export/import formats.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy -->
+        <section class="section section-about">
+            <div class="container">
+                <h2 class="section-title">Privacy & Infrastructure</h2>
+                <div class="philosophy-grid">
+                    <div class="ph-card">
+                        <div class="ph-icon">🔒</div>
+                        <h4>100% Client-Side / Zero-Server Footprint</h4>
+                        <p>API keys and sensitive prompts stay in your team's local browser storage (IndexedDB) or local SQLite DB.</p>
+                    </div>
+                    <div class="ph-card">
+                        <div class="ph-icon">💰</div>
+                        <h4>Zero Monthly SaaS Fees</h4>
+                        <p>Pay once for implementation, use forever with your own API keys (OpenAI, Anthropic, OpenRouter, Ollama, etc.).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order steps -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">How to Order</h2>
+
+                <div class="news-timeline">
+                    <div class="news-item">
+                        <div class="news-date">Step 1</div>
+                        <div class="news-body">
+                            <h4>Fill out the request form</h4>
+                            <p>Describe your team size, workflow, and what you need.</p>
+                            <a class="news-link" href="https://forms.gle/XpTQRCrpGdsbPiR48" target="_blank" rel="noopener">Order Custom Build (Google Forms) ↗</a>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">Step 2</div>
+                        <div class="news-body">
+                            <h4>Finalize specs</h4>
+                            <p>We finalize specs &amp; details via Telegram, Discord, or Reddit DM.</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">Step 3</div>
+                        <div class="news-body">
+                            <h4>50% prepay in crypto</h4>
+                            <p>USDT, USDC, SOL, BTC, ETH.</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">Step 4</div>
+                        <div class="news-body">
+                            <h4>Test build in 1–3 days</h4>
+                            <p>Build delivered within 1–3 days on a test instance.</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">Step 5</div>
+                        <div class="news-body">
+                            <h4>Approval &amp; handover</h4>
+                            <p>Final approval, remaining 50% payment, and transfer of sources / deployment scripts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="devto-banner">
+                    <div class="devto-info">
+                        <h3>Ready to start?</h3>
+                        <p>Tell me about your workflow — I will reply with specs, timeline, and a fixed quote.</p>
+                    </div>
+                    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                        <a href="https://forms.gle/XpTQRCrpGdsbPiR48" target="_blank" rel="noopener" class="btn btn-primary">Order Custom Build ↗</a>
+                        <a href="https://t.me/Traliran" target="_blank" rel="noopener" class="btn btn-secondary">Contact via Telegram ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-separated">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Traliran. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="../">Home</a>
+                    <a href="../blog/">Blog</a>
+                    <a href="https://dev.to/traliran" target="_blank">Dev.to</a>
+                    <a href="https://github.com/Traliran" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../b2b.js"></script>
+</body>
+</html>

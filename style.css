@@ -284,3 +284,12 @@ body.reader-open { overflow: hidden; }
     .reader-topbar { top: -24px; }
     .reader-title { font-size: 1.5rem; }
 }
+
+/* B2B page */
+.b2b-hero { padding: 90px 0 40px; }
+.b2b-section-sub { color: var(--text-muted); max-width: 760px; line-height: 1.8; margin-top: 8px; }
+.price-tag { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1.15rem; color: var(--accent-blue); margin: 12px 0 4px; }
+.check-list { list-style: none; margin: 16px 0 0; display: flex; flex-direction: column; gap: 10px; color: var(--text-muted); line-height: 1.7; }
+.check-list li { padding-left: 28px; position: relative; }
+.check-list li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-blue); font-weight: 700; }
+.check-list strong { color: var(--text-primary); }
