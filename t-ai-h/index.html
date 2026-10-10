@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traliran AI Hub — Privacy-First Serverless AI Client & Sandbox</title>
+    <meta name="description" content="Browser-powered AI sandbox and IDE: Groq, Gemini, OpenAI, OpenRouter, DeepSeek, Anthropic and local LLMs with zero middlemen.">
+    <link rel="canonical" href="https://traliran.github.io/t-ai-h/">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind theme tokens for the fixed dark landing.
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#111827',
+                        accent: '#6366f1',
+                        accentHover: '#4f46e5',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-accent selection:text-white">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/80 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo links back to the main site -->
+            <a href="../" class="flex items-center space-x-3">
+                <span class="text-2xl">💎</span>
+                <span class="font-bold text-lg tracking-wide bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Traliran AI Hub</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
+                <a href="../" class="hover:text-accent transition" data-i18n="nav_home">Home</a>
+                <a href="#features" class="hover:text-accent transition" data-i18n="nav_features">Features</a>
+                <a href="#ide" class="hover:text-accent transition" data-i18n="nav_ide">AI IDE</a>
+                <a href="#mcp" class="hover:text-accent transition" data-i18n="nav_mcp">MCP Protocols</a>
+                <a href="#pricing" class="hover:text-accent transition" data-i18n="nav_store">Assistant Store</a>
+            </nav>
+            <div class="flex items-center space-x-3">
+                <!-- Language switch only, theme stays fixed dark -->
+                <button id="lang-toggle" class="text-xs font-semibold border border-slate-700 rounded-lg px-3 py-1.5 text-slate-200 hover:border-indigo-400 hover:text-white transition">EN</button>
+                <a href="https://github.com/traliran/traliran-ai-hub" target="_blank" class="text-slate-300 hover:text-white transition text-lg">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://traliran.github.io/traliran-ai-hub/" target="_blank" class="bg-accent hover:bg-accentHover text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-lg shadow-indigo-500/20" data-i18n="nav_launch">Launch App</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-24 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(99,102,241,0.15),rgba(255,255,255,0))]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center space-x-2 bg-indigo-950/60 border border-indigo-800/50 rounded-full px-4 py-1.5 text-xs text-indigo-300 mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span data-i18n="hero_badge">AGPLv3 Open Source • 100% Serverless & Private</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight"><span data-i18n="hero_title_prefix">Your Browser-Powered </span><span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent" data-i18n="hero_title_accent">AI Sandbox & IDE</span></h1>
+            <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto" data-i18n="hero_sub">
+                Connect directly to Groq, Gemini, OpenAI, OpenRouter, DeepSeek, Anthropic, and local LLMs (Ollama/Llama.cpp) without middlemen or server leaks.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://traliran.github.io/traliran-ai-hub/" target="_blank" class="w-full sm:w-auto bg-accent hover:bg-accentHover text-white px-8 py-3.5 rounded-xl font-semibold transition shadow-xl shadow-indigo-500/25 flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-rocket"></i>
+                    <span data-i18n="hero_launch">Launch Web App</span>
+                </a>
+                <a href="https://github.com/traliran/traliran-ai-hub" target="_blank" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-slate-200 px-8 py-3.5 rounded-xl font-semibold transition border border-slate-700 flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-github"></i>
+                    <span data-i18n="hero_github">Star on GitHub</span>
+                </a>
+            </div>
+
+            <!-- Product screenshot reused from the main landing -->
+            <div class="mt-16 rounded-2xl border border-slate-800 bg-cardBg/50 p-2 shadow-2xl max-w-5xl mx-auto">
+                <div class="rounded-xl overflow-hidden bg-slate-900 border border-slate-800">
+                    <img id="hero-shot" src="../assets/img/ai-hub-1.png" alt="Traliran AI Hub interface screenshot" class="w-full h-auto block" loading="lazy">
+                    <p class="text-slate-500 text-sm py-3 px-4" data-i18n="hero_caption_sub">Runs purely client-side in your browser storage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Banner -->
+    <section class="border-y border-slate-800 bg-slate-900/40 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+            <div class="flex items-center space-x-4 justify-center md:justify-start">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-white" data-i18n="privacy_t1">100% Client-Side</h3>
+                    <p class="text-xs text-slate-400" data-i18n="privacy_d1">API keys stay strictly in your LocalStorage.</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 justify-center md:justify-start">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-xl">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-white" data-i18n="privacy_t2">Parallel Benchmarking</h3>
+                    <p class="text-xs text-slate-400" data-i18n="privacy_d2">Query multiple models side-by-side simultaneously.</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 justify-center md:justify-start">
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-white" data-i18n="privacy_t3">MCP Function Calling</h3>
+                    <p class="text-xs text-slate-400" data-i18n="privacy_d3">Connect external tools via Streamable HTTP MCP.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-white" data-i18n="features_title">Everything you need in a modern AI workspace</h2>
+            <p class="mt-4 text-slate-400" data-i18n="features_sub">Designed for developers, researchers, and power users who demand control and privacy.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-cardBg border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+                <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4">
+                    <i class="fa-solid fa-code-compare"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2" data-i18n="f1_t">Multi-Model Setup & Compare</h3>
+                <p class="text-sm text-slate-400" data-i18n="f1_d">Select multiple models across different providers (Groq, OpenAI, Claude) and evaluate responses side-by-side instantly.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-cardBg border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+                <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 mb-4">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2" data-i18n="f2_t">AI Reasoning & Thinking</h3>
+                <p class="text-sm text-slate-400" data-i18n="f2_d">Native rendering for reasoning models like DeepSeek-R1. Structural thoughts are organized into collapsible dropdowns.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-cardBg border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-4">
+                    <i class="fa-solid fa-users-viewfinder"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2" data-i18n="f3_t">AI Group Debate Mode</h3>
+                <p class="text-sm text-slate-400" data-i18n="f3_d">Run multi-agent discussion loops where specialized personas (Optimist, Critic, Technologist) cross-examine your thesis.</p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div id="ide" class="bg-cardBg border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2" data-i18n="f4_t">Full In-Browser AI IDE</h3>
+                <p class="text-sm text-slate-400" data-i18n="f4_d">Manage multi-file projects, edit code with syntax highlighting, preview HTML/JS live in an iframe, and export as ZIP.</p>
+            </div>
+
+            <!-- Feature 5 -->
+            <div id="mcp" class="bg-cardBg border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 mb-4">
+                    <i class="fa-solid fa-plug"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2" data-i18n="f5_t">Model Context Protocol (MCP)</h3>
+                <p class="text-sm text-slate-400" data-i18n="f5_d">Connect remote MCP servers over Streamable HTTP and expose dynamic tools to the AI agent loop seamlessly.</p>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="bg-cardBg border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+                <div class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-400 mb-4">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2" data-i18n="f6_t">Local Backends Support</h3>
+                <p class="text-sm text-slate-400" data-i18n="f6_d">Easily hook up local instances of Ollama or Llama.cpp to run fully offline models without internet dependencies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assistant Store Section -->
+    <section id="pricing" class="py-20 bg-slate-900/30 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl" data-i18n="store_title">Assistant Store & Custom Presets</h2>
+            <p class="mt-4 text-slate-400 max-w-2xl mx-auto" data-i18n="store_sub">Unlock production-ready system prompts and specialized configurations for scriptwriters, developers, and creators for just $4 – $6.</p>
+
+            <div class="mt-12 max-w-md mx-auto bg-cardBg border border-indigo-500/30 rounded-3xl p-8 shadow-2xl relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full" data-i18n="store_badge">
+                    Exclusive Presets
+                </div>
+                <h3 class="text-xl font-bold text-white" data-i18n="store_card_title">Pro Prompt Bundles</h3>
+                <p class="text-slate-400 text-sm mt-2" data-i18n="store_card_sub">Skip hours of prompt tuning and get fine-tuned workflows instantly.</p>
+                <div class="my-6 text-3xl font-extrabold text-white">$4 <span id="store-price-suffix" class="text-sm font-normal text-slate-400">/ preset pack</span></div>
+                <ul class="text-sm text-slate-300 space-y-3 text-left mb-8">
+                    <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-indigo-400"></i><span data-i18n="store_li1">Advanced System Prompts</span></li>
+                    <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-indigo-400"></i><span data-i18n="store_li2">Optimized Code & Text Editors</span></li>
+                    <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-indigo-400"></i><span data-i18n="store_li3">Ideation & Content Creator Bots</span></li>
+                </ul>
+                <a href="https://traliran.github.io/traliran-ai-hub/" target="_blank" class="block w-full bg-accent hover:bg-accentHover text-white py-3 rounded-xl font-semibold transition text-center shadow-lg shadow-indigo-500/20" data-i18n="store_cta">
+                    Explore Store in App
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-darkBg py-12 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <span class="text-xl">💎</span>
+                <span class="font-bold text-white">Traliran AI Hub</span>
+                <span class="text-xs text-slate-600">| AGPLv3 License</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="https://github.com/traliran/traliran-ai-hub" target="_blank" class="hover:text-white transition" data-i18n="footer_repo">GitHub Repository</a>
+                <a href="https://github.com/traliran/traliran-ai-hub/wiki/Custom-Builds-and-B2B" target="_blank" class="hover:text-white transition" data-i18n="footer_b2b">B2B Custom Builds</a>
+                <a href="https://forms.gle/XpTQRCrpGdsbPiR48" target="_blank" class="hover:text-white transition" data-i18n="footer_contact">Contact / Order</a>
+            </div>
+            <p class="text-xs text-slate-500" data-i18n="footer_copy">© 2025 Traliran AI Hub. Privacy First.</p>
+        </div>
+    </footer>
+
+    <script src="../t-ai-h.js"></script>
+</body>
+</html>

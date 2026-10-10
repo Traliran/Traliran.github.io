@@ -13,6 +13,8 @@ const i18n = {
         nav_news: 'Новости',
         nav_blog: 'Блог',
         nav_b2b: 'B2B',
+        nav_taih: 'AI Hub',
+        btn_details: 'Подробнее →',
         hero_badge: '✨ Minimalist Unix & AI Ecosystem',
         hero_title: 'Создаю легкие, высокоскоростные инструменты и приватные ИИ-системы',
         hero_desc: 'Чистый C11, POSIX утилиты, веб-клиенты без серверов-посредников и акцент на абсолютную производительность.',
@@ -41,6 +43,8 @@ const i18n = {
         nav_news: 'News',
         nav_blog: 'Blog',
         nav_b2b: 'B2B',
+        nav_taih: 'AI Hub',
+        btn_details: 'Details →',
         hero_badge: '✨ Minimalist Unix & AI Ecosystem',
         hero_title: 'Building lightweight, high-speed tools and privacy-first AI systems',
         hero_desc: 'Pure C11, POSIX utilities, serverless web clients with zero middlemen and absolute performance focus.',
@@ -77,7 +81,7 @@ function applyLang(lang) {
     loadNews();
 }
 
-// 1. Загрузка новостей из news.json (с кликабельной ссылкой на проект)
+// 1. Load news from news.json (with a clickable project link)
 async function loadNews() {
     try {
         const response = await fetch('data/news.json');
@@ -104,7 +108,7 @@ async function loadNews() {
     }
 }
 
-// Тема: тёмная по умолчанию, светлая по кнопке
+// Theme: dark by default, light on toggle
 function initTheme() {
     const saved = localStorage.getItem('theme');
     const theme = saved || 'dark';

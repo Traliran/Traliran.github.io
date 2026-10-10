@@ -8,7 +8,7 @@
     --accent-blue-hover: #1c71d8;
     --accent-purple: #9141ac;
     --border-color: #2e2e34;
-    --footer-bg: #09090b; /* Четко отделенный цвет футера */
+    --footer-bg: #09090b; /* Clearly separated footer color */
     --radius-lg: 16px;
     --radius-md: 10px;
     --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -21,7 +21,7 @@
     --text-primary: #1d1d20;
     --text-muted: #62626c;
     --border-color: #e0e0e6;
-    --footer-bg: #18181b; /* Темный футер в светлой теме для мощного контраста */
+    --footer-bg: #18181b; /* Dark footer in light theme for strong contrast */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -75,7 +75,7 @@ body {
 .btn-pill:active { transform: translateY(0); }
 #theme-toggle { font-size: 1.05rem; padding: 9px 16px; }
 
-/* Sections — увеличенные отступы */
+/* Sections with generous spacing */
 .section { padding: 96px 0; scroll-margin-top: 90px; }
 .section-title { font-size: 2rem; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.02em; }
 
