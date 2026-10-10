@@ -78,6 +78,12 @@
                 </a>
             </div>
 
+            <!-- Top anchor shortcuts to the full IDE / MCP sections -->
+            <div class="mt-6 flex flex-wrap justify-center items-center gap-3 text-sm">
+                <a href="#ide" class="px-4 py-1.5 rounded-full border border-slate-700 text-slate-300 hover:border-indigo-400 hover:text-white transition" data-i18n="nav_ide">AI IDE</a>
+                <a href="#mcp" class="px-4 py-1.5 rounded-full border border-slate-700 text-slate-300 hover:border-indigo-400 hover:text-white transition" data-i18n="nav_mcp">MCP Protocols</a>
+            </div>
+
             <!-- Product screenshot reused from the main landing -->
             <div class="mt-16 rounded-2xl border border-slate-800 bg-cardBg/50 p-2 shadow-2xl max-w-5xl mx-auto">
                 <div class="rounded-xl overflow-hidden bg-slate-900 border border-slate-800">
@@ -157,7 +163,7 @@
             </div>
 
             <!-- Feature 4 -->
-            <div id="ide" class="bg-cardBg border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+            <div class="bg-cardBg border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
                 <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4">
                     <i class="fa-solid fa-laptop-code"></i>
                 </div>
@@ -166,7 +172,7 @@
             </div>
 
             <!-- Feature 5 -->
-            <div id="mcp" class="bg-cardBg border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+            <div class="bg-cardBg border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
                 <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 mb-4">
                     <i class="fa-solid fa-plug"></i>
                 </div>
@@ -181,6 +187,43 @@
                 </div>
                 <h3 class="text-lg font-semibold text-white mb-2" data-i18n="f6_t">Local Backends Support</h3>
                 <p class="text-sm text-slate-400" data-i18n="f6_d">Easily hook up local instances of Ollama or Llama.cpp to run fully offline models without internet dependencies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full AI IDE Section (nav anchor target) -->
+    <section id="ide" class="py-20 border-t border-slate-800 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-white" data-i18n="ide_title">⚡ AI IDE — Integrated Development Environment</h2>
+            <p class="mt-4 text-slate-400 max-w-3xl" data-i18n="ide_lead">A full-fledged in-browser IDE for code generation, editing, and project management, powered by your chosen AI model.</p>
+            <ul class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                <li class="bg-cardBg border border-slate-800 rounded-2xl p-5 text-sm text-slate-300 flex space-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i><span data-i18n="ide_b1">Multi-Repository Workspaces: create, switch, and delete repositories. Each repo keeps its own files, commits, branches, and git refs; new repos start empty.</span></li>
+                <li class="bg-cardBg border border-slate-800 rounded-2xl p-5 text-sm text-slate-300 flex space-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i><span data-i18n="ide_b2">Real Git: commits bound to repo + branch, per-branch history, branches forked from the current branch, cascading delete of branches/repos with their commits (GIT tab).</span></li>
+                <li class="bg-cardBg border border-slate-800 rounded-2xl p-5 text-sm text-slate-300 flex space-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i><span data-i18n="ide_b3">Git-Compatible ZIP Export/Import: export packs the working tree plus a real .git/ readable by the Git CLI (offline, zero dependencies); import restores files, history, and branches.</span></li>
+                <li class="bg-cardBg border border-slate-800 rounded-2xl p-5 text-sm text-slate-300 flex space-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i><span data-i18n="ide_b4">File Explorer: create/rename files and folders manually (HTML, CSS, JS, etc.) or via the AI agent.</span></li>
+                <li class="bg-cardBg border border-slate-800 rounded-2xl p-5 text-sm text-slate-300 flex space-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i><span data-i18n="ide_b5">Code Editor: edit files with a monospaced code editor.</span></li>
+                <li class="bg-cardBg border border-slate-800 rounded-2xl p-5 text-sm text-slate-300 flex space-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i><span data-i18n="ide_b6">Live Preview: instantly preview HTML/JS/CSS code changes in a separate browser tab or the inline panel.</span></li>
+                <li class="bg-cardBg border border-slate-800 rounded-2xl p-5 text-sm text-slate-300 flex space-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i><span data-i18n="ide_b7">AI Agent: multi-chat agent with tool calling (list/read/write/edit/rename files), image attachments (upload, camera, Ctrl+V paste), and a fullscreen Agentic-only mode.</span></li>
+                <li class="bg-cardBg border border-slate-800 rounded-2xl p-5 text-sm text-slate-300 flex space-x-3"><i class="fa-solid fa-check text-emerald-400 mt-1"></i><span data-i18n="ide_b8">Cloud Sync (optional): sync workspace via Firebase, Supabase, PocketBase, or a generic backend, with an offline queue.</span></li>
+                <li class="bg-cardBg border border-slate-800 rounded-2xl p-5 text-sm text-slate-300 flex space-x-3 md:col-span-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i><span data-i18n="ide_b9">Project Management: download your entire workspace as a .zip or reset it.</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Full MCP Section (nav anchor target) -->
+    <section id="mcp" class="py-20 border-t border-slate-800 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-white" data-i18n="mcp_title">🧩 MCP (Model Context Protocol)</h2>
+            <p class="mt-4 text-slate-400 max-w-3xl" data-i18n="mcp_p1">Connect remote MCP servers over Streamable HTTP and expose their tools to the AI as function-calling tools — just like an IDE agent. The model decides when to call a tool, the hub proxies the call, feeds the result back, and repeats. Works with any Streamable HTTP MCP endpoint; configure servers in the 🧩 MCP Servers modal.</p>
+            <p class="mt-4 text-slate-400 max-w-3xl" data-i18n="mcp_p2">MCP lets you plug external tools into the chat. The client (mcp.js) speaks JSON-RPC 2.0 over Streamable HTTP to any remote MCP server and turns its tools into OpenAI-style function tools used by the agentic loop.</p>
+            <div class="mt-10 bg-cardBg border border-slate-800 rounded-2xl p-6 sm:p-8 text-left">
+                <h3 class="text-lg font-semibold text-white mb-3" data-i18n="mcp_how_title">Connect a server</h3>
+                <p class="text-sm text-slate-400" data-i18n="mcp_how">Open 🧩 MCP Servers, enter a name + URL (and an optional Bearer auth header), hit Add & Connect. Servers are saved in LocalStorage and auto-reconnect on startup. You can also add one from the console:</p>
+                <!-- Console snippet is identical in both languages -->
+                <pre class="mt-4 bg-slate-900 border border-slate-800 rounded-xl p-4 overflow-x-auto text-xs sm:text-sm text-slate-200"><code>const entry = MCP_MANAGER.add({ name: 'MyServer', url: 'https://host/mcp', authHeader: '' });
+await MCP_MANAGER.connectOne(entry.id);</code></pre>
+                <p class="mt-4 text-sm text-slate-400" data-i18n="mcp_build">Write your own server: implement a POST endpoint handling initialize, notifications/initialized, tools/list, and tools/call, return an Mcp-Session-Id header, and emit CORS.</p>
+                <p class="mt-4 text-sm text-amber-200/90 bg-amber-500/10 border border-amber-500/20 rounded-xl px-4 py-3" data-i18n="mcp_note">Note: the agentic MCP mode runs only when a single model is selected (it is disabled in multi-model compare mode), and your server must allow CORS from the app's domain.</p>
             </div>
         </div>
     </section>
