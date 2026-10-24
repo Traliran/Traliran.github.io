@@ -1,6 +1,15 @@
 [
   {
     "id": 1,
+    "date": "2026-10-24",
+    "title_en": "CWTNote — New Markdown Notes App",
+    "title_ru": "Релиз CWTNote — локальные Markdown-заметки",
+    "summary_en": "Local-first Markdown notes for Linux desktop (GTK4 / libadwaita) with automatic Git history, wikilinks, live preview, and fast capture.",
+    "summary_ru": "Локальные Markdown-заметки для Linux desktop на GTK4 и libadwaita: авто-коммиты в Git при каждом сохранении, вики-ссылки, предпросмотр и быстрый ввод.",
+    "link": "https://github.com/Traliran/CWTNote"
+  },
+  {
+    "id": 2,
     "date": "2026-10-20",
     "title_en": "T AI H — Notes update:",
     "title_ru": "T AI H - обновление заметок",
@@ -9,7 +18,7 @@
     "link": "https://github.com/Traliran/traliran-ai-hub/releases/tag/3.2.0"
   },
   {
-    "id": 2,
+    "id": 3,
     "date": "2026-10-18",
     "title_en": "T AI H — refactored",
     "title_ru": "T AI H - рефакторинг",
@@ -18,7 +27,7 @@
     "link": "https://github.com/Traliran/traliran-ai-hub/releases/tag/3.1.0"
   },
   {
-    "id": 3,
+    "id": 4,
     "date": "2026-10-17",
     "title_en": "T AI H CLI — IDE update",
     "title_ru": "T AI H CLI - Обновление IDE",
@@ -27,7 +36,7 @@
     "link": "https://github.com/Traliran/traliran-ai-hub-cli/releases/tag/3.0.0-test-1"
   },
   {
-    "id": 4,
+    "id": 5,
     "date": "2026-10-02",
     "title_en": "T AI H — IDE update:",
     "title_ru": "T AI H - обновление IDE",
@@ -36,7 +45,7 @@
     "link": "https://github.com/Traliran/traliran-ai-hub/releases/tag/3.0.0"
   },
   {
-    "id": 5,
+    "id": 6,
     "date": "2026-09-28",
     "title_en": "noteSS 1.1 Added note caching",
     "title_ru": "Обновление noteSS 1.1 Добавлено кеширование заметок",
@@ -45,7 +54,7 @@
     "link": "https://github.com/Traliran/notess/releases/tag/1.1.0"
   },
   {
-    "id": 6,
+    "id": 7,
     "date": "2026-09-20",
     "title_en": "noteSS 1.0 Release",
     "title_ru": "Релиз noteSS 1.0",
@@ -54,7 +63,7 @@
     "link": "https://github.com/Traliran/noteSS"
   },
   {
-    "id": 7,
+    "id": 8,
     "date": "2026-09-12",
     "title_en": "du-rank Updated to v1.2.0",
     "title_ru": "Обновление du-rank до v1.2.0",

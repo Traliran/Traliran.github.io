@@ -25,6 +25,7 @@ const i18n = {
         card_cli_desc: 'Терминальный интерфейс AI Hub: параллельный бенчмаркинг моделей, Vim-mode и работа с локальными бэкендами прямо из консоли.',
         durank_desc: 'Ультрабыстрый анализатор занятого места на диске. Написан на C11 в одном файле, мгновенно визуализирует структуры папок прямо в терминале.',
         notess_desc: 'Минималистичный десктопный клиент для мгновенной отправки заметок в Memos API v1. Без тяжелых JSON-библиотек и фреймворков.',
+        cwtnote_desc: 'Локальные Markdown-заметки для Linux desktop на C/GTK4 и libadwaita: авто-коммиты в Git при сохранении, вики-ссылки, предпросмотр и быстрый ввод.',
         title_about: 'Обо мне и Инженерной философии',
         about_lead: 'Привет! Я Traliran — разработчик программного обеспечения, сфокусированный на создании легковесных системных утилит, приватных инструментов для работы с ИИ.',
         about_body: 'Мой подход основан на снижении системных накладных расходов: я предпочитаю чистый C11, ванильный JavaScript и POSIX-совместимые стандарты громоздким фреймворкам. Всё ПО разрабатывается по принципам Unix — каждая утилита делает одну вещь и делает её максимально быстро.',
@@ -32,7 +33,7 @@ const i18n = {
         ph_privacy: 'Прямое взаимодействие клиент-сервер (включая работу с LLM) без сбора метрик и сторонних прокси.',
         title_news: 'Новости и Релизы',
         btn_read_onsite: 'Читать на сайте →',
-        devto_desc: 'Публикую разборы системного программирования, Arch Linux, написания клиентов C/GTK и тонкостей оптимизации.',
+        devto_desc: 'Публикую разборы системного программирования, Fedora / Linux, написания клиентов C/GTK и тонкостей оптимизации.',
         footer_slogan: 'Crafting lightweight Linux ecosystem & privacy-first AI software.',
         support_title: 'Поддержать разработку ☕',
         support_sub: 'Если мои open-source проекты приносят вам пользу:'
@@ -55,6 +56,7 @@ const i18n = {
         card_cli_desc: 'Terminal-native AI Hub interface: parallel model benchmarking, Vim-mode and local backends right from the console.',
         durank_desc: 'Ultra-fast disk usage analyzer. Single-file C11, instantly visualizes folder structures in the terminal.',
         notess_desc: 'Minimalist desktop client for instant note capture to Memos API v1. No heavy JSON libs or frameworks.',
+        cwtnote_desc: 'Local-first Markdown notes for Linux desktop in C/GTK4 & libadwaita with automatic Git history, wikilinks, live preview, and fast capture.',
         title_about: 'About & Engineering Philosophy',
         about_lead: 'Hi! I’m Traliran — a software developer focused on lightweight system utilities, privacy-first AI tools.',
         about_body: 'My approach is about cutting overhead: pure C11, vanilla JavaScript and POSIX standards instead of bloated frameworks. All software follows the Unix way — do one thing and do it fast.',
@@ -62,7 +64,7 @@ const i18n = {
         ph_privacy: 'Direct client-server communication (including LLMs) with no metrics collection or third-party proxies.',
         title_news: 'News & Releases',
         btn_read_onsite: 'Read on-site →',
-        devto_desc: 'I write about systems programming, Arch Linux, C/GTK clients and optimization details.',
+        devto_desc: 'I write about systems programming, Fedora / Linux, C/GTK clients and optimization details.',
         footer_slogan: 'Crafting lightweight Linux ecosystem & privacy-first AI software.',
         support_title: 'Support development ☕',
         support_sub: 'If my open-source projects are useful to you:'
